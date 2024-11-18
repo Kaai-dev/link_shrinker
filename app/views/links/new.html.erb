@@ -1,10 +1,11 @@
-<div class="card container shadow">
-  <div class="card-header d-flex justify-content-between align-items-center">
-    <h4 class="mb-0">Shrink Link</h4>
-    <%= link_to "Cancel", links_path, class: "btn btn-outline-danger btn-sm" %>
-  </div>
-  <div class="card-body">
-  <br>
-  <%= render "form", link: @link %>
+<div class="d-flex justify-content-center align-items-center" style="height: 50vh;">
+  <div class="card shadow" style='width: 50%;'>
+    <div class="card-header d-flex justify-content-between align-items-center">
+      <h4 class="mb-0">New: Shrink</h4>
+    </div>
+    <div class="card-body pt-5 text-center">
+      <%= render "form", link: @link %>
+      <br>
+    </div>
   </div>
 </div>
