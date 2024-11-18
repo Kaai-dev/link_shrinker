@@ -1,14 +1,29 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Links</h1>
-
-<div id="links">
-  <% @links.each do |link| %>
-    <%= render link %>
-    <p>
-      <%= link_to "Show this link", link %>
-    </p>
-  <% end %>
+<div class="card container shadow">
+  <div class="card-header d-flex justify-content-between align-items-center">
+    <h4 class="mb-0">URL Map</h4>
+    <%= link_to "New Shrink", new_link_path, class: "btn btn-primary btn-sm" %>
+  </div>
+  <div class="card-body">
+    <br>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">URL</th>
+          <th scope="col">Shrinked URL</th>
+          <th scope="col">More Info</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @links.each do |link| %>
+        <tr>
+          <td><%= link.input_url %></td>
+          <td><%= link.shrinked_url %></td>
+          <td><%= link_to "Show this link", link, class: 'btn btn-sm btn-outline-warning ' %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>
-
-<%= link_to "New link", new_link_path %>

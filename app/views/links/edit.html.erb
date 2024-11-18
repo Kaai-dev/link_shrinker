@@ -1,10 +1,19 @@
-<h1>Editing link</h1>
 
-<%= render "form", link: @link %>
 
-<br>
-
-<div>
-  <%= link_to "Show this link", @link %> |
-  <%= link_to "Back to links", links_path %>
-</div>
+<div class="card container-sm shadow" style='margin-top: 18vh'>
+  <div class="card-header d-flex justify-content-between align-items-center">
+    <h4 class="mb-0">Editing: URL Name</h4>
+    <%= button_to "Destroy this link", @link, method: :delete, class: 'btn btn-sm btn-outline-danger' %>
+  </div>
+  <div class="card-body pt-5 text-center">
+  
+    <%= render "form", link: @link %>
+    
+    <br>
+    
+    <div class=' mt-4 mb-2 d-flex justify-content-evenly'>
+      <%= link_to "Cancel", @link, class: 'btn btn-sm btn-warning' %>
+    </div>
+    
+  </div>
+</div>,

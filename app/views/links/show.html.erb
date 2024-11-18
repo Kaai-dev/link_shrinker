@@ -1,10 +1,25 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @link %>
 
-<div>
-  <%= link_to "Edit this link", edit_link_path(@link) %> |
-  <%= link_to "Back to links", links_path %>
-
-  <%= button_to "Destroy this link", @link, method: :delete %>
-</div>
+<div class="card container-sm shadow" style='margin-top: 18vh'>
+  <div class="card-header d-flex justify-content-between align-items-center">
+    <h4 class="mb-0">URL Name</h4>
+    <%= button_to "Destroy this link", @link, method: :delete, class: 'btn btn-sm btn-outline-danger' %>
+  </div>
+  <div class="card-body pt-5 text-center">
+  
+    <p><b>Given URL: &nbsp;</b><%= @link.input_url %></p>
+    
+    <p><b>Shrinked URL: &nbsp;</b><%= @link.shrinked_url %></p>
+    
+    <p><b>Created at: &nbsp;</b><%= @link.created_at.strftime('%d-%m-%Y %H:%M:%S') %></p>
+    
+    <br>
+    
+    <div class=' mt-4 mb-2 d-flex justify-content-evenly'>
+      <%= link_to "Edit this link", edit_link_path(@link), class: 'btn btn-sm btn-primary' %>
+      <%= link_to "Back to links", links_path, class: 'btn btn-sm btn-primary' %>
+    </div>
+    
+  </div>
+</div>,
