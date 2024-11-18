@@ -57,7 +57,17 @@ class LinksController < ApplicationController
     end
   end
 
+  def redirect_request
+    link = Link.find_by(shrinked_url: params[:shrinked_url])
+    if link
+      redirect_to link.input_url, allow_other_host: true
+    else
+      render plain: 'URL not found', status: :not_found
+    end
+  end
+
   private
+
     # Use callbacks to share common setup or constraints between actions.
     def set_link
       @link = Link.find(params[:id])

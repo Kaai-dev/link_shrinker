@@ -4,7 +4,7 @@ ruby "3.2.2"
 
 gem 'bootstrap', '~> 5.3.3'
 gem 'sassc-rails'
-
+gem 'validate_url'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.4"
