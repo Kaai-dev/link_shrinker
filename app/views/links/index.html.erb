@@ -1,35 +1,39 @@
-<p style="color: green"><%= notice %></p>
-<div class="d-flex justify-content-center align-items-center">
-  <div class="card shadow" style="width: 50%;" >
-    <div class="card-header d-flex justify-content-between align-items-center">
+<header class="text-center py-5 bg-primary text-white shadow">
+  <h1 class="display-5 fw-bold">Welcome to Shrinkly</h1> <!-- Changed to display-5 for better scaling -->
+  <p class="lead">The ultimate tool to shorten and manage your URLs with ease.</p>
+</header>
+
+<main class="d-flex justify-content-center align-items-center py-5">
+  <div class="card shadow-lg rounded w-100" style="max-width: 900px;">
+    <div class="card-header d-flex justify-content-between align-items-center bg-primary text-white">
       <h4 class="mb-0">URL Map</h4>
-      <%= link_to "New Shrink", new_link_path, class: "btn btn-primary btn-sm" %>
+      <%= link_to "New Shrink", new_link_path, class: "btn btn-light btn-sm" %>
     </div>
     <div class="card-body text-center">
-      <br>
       <% if Link.exists? %>
-        <table class="table">
-          <thead>
-            <tr>
-              <th scope="col">URL</th>
-              <th scope="col">Shrinked URL</th>
-              <th scope="col">More Info</th>
-            </tr>
-          </thead>
-          <tbody>
-            <% @links.each do |link| %>
+        <div class="table-responsive"> <!-- Makes the table scrollable on smaller devices -->
+          <table class="table table-striped table-hover">
+            <thead class="table-dark">
               <tr>
-                <td><%= link.input_url %></td>
-                <td><%= link_to short_url(shrinked_url: link.shrinked_url), short_url(shrinked_url: link.shrinked_url) %></td>
-                <td><%= link_to "Show this link", link, class: 'btn btn-sm btn-outline-warning ' %></td>
+                <th scope="col">URL</th>
+                <th scope="col">Shrinked URL</th>
+                <th scope="col">More Info</th>
               </tr>
-            <% end %>
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              <% @links.each do |link| %>
+                <tr>
+                  <td class="text-truncate" style="max-width: 150px;"><%= link.input_url %></td>
+                  <td class="text-truncate" style="max-width: 150px;"><%= link_to short_url(shrinked_url: link.shrinked_url), short_url(shrinked_url: link.shrinked_url) %></td>
+                  <td><%= link_to "Show this link", link, class: 'btn btn-sm btn-outline-secondary' %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
       <% else %>
-        <p>You Currently have no links shrinked.</p>
+        <p class="text-muted mt-4">You currently have no links shrinked.</p>
       <% end %>
-
     </div>
   </div>
-</div>
+</main>

@@ -1,14 +1,17 @@
-<p style="color: green"><%= notice %></p>
-<div class="d-flex justify-content-center align-items-center" style="height: 50vh;">
-  <div class="card shadow" style='width: 50%;'>
-    <div class="card-header d-flex justify-content-between align-items-center">
-      <h4 class="mb-0">Editing: URL Name</h4>
+  <header class="text-center py-5 bg-primary text-white shadow">
+    <h1 class="display-4 fw-bold">Edit Link</h1>
+    <p class="lead">The ultimate tool to shorten and manage your URLs with ease.</p>
+  </header>
+
+<div class="d-flex justify-content-center align-items-center" style="min-height: 50vh; background: rgba(248, 249, 250, 0.95);">
+  <div class="card shadow-lg rounded" style="width: 45%; max-width: 600px;">
+    <div class="card-header d-flex justify-content-between align-items-center bg-dark text-white">
+      <h4 class="mb-0">Editing: URL</h4>
       <%= button_to "Destroy this link", @link, method: :delete, class: 'btn btn-sm btn-outline-danger' %>
     </div>
-    <div class="card-body pt-5 text-center">
-      <%= render "form", link: @link %>
-      <br>
+    <div class="card-body py-4 text-center">
+        <%= render "form", link: @link %>
+      
     </div>
   </div>
-</div>
 </div>

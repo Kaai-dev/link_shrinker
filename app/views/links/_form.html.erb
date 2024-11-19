@@ -1,7 +1,7 @@
-<%= form_with(model: link) do |form| %>
+<%= form_with(model: link, class: "needs-validation") do |form| %>
   <% if link.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(link.errors.count, "error") %> prohibited this link from being saved:</h2>
+    <div class="alert alert-danger">
+      <h5><%= pluralize(link.errors.count, "error") %> prohibited this link from being saved:</h5>
       <ul>
         <% link.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -9,12 +9,15 @@
       </ul>
     </div>
   <% end %>
-  <div class='mb-5'>
-    <%= form.label :input_url, style: "display: block", class:'mb-2' %>
-    <%= form.text_field :input_url, class: 'form-control'  %>
+
+  <div class="mb-4">
+    <%= form.label :input_url, "Input URL", class: "form-label fw-bold" %>
+    <%= form.text_field :input_url, class: "form-control", placeholder: "Enter the URL to shrink" %>
   </div>
-  <div class=' mt-4 mb-2 d-flex justify-content-evenly'>
-    <%= form.submit 'Shrink', class: 'btn btn-sm btn-outline-success action-btn' %>
-    <%= link_to "Cancel", link.try(:persisted?) ? link_path(link) : links_path, class: "btn btn-outline-danger btn-sm action-btn" %>
+
+  <div class="d-flex justify-content-evenly mt-4">
+    <%= form.submit 'Shrink', class: 'btn btn-success btn-sm px-4' %>
+    <%= link_to "Cancel", link.try(:persisted?) ? link_path(link) : links_path, class: "btn btn-danger btn-sm px-4" %>
   </div>
 <% end %>
+

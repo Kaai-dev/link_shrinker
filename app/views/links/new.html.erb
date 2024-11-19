@@ -1,11 +1,17 @@
-<div class="d-flex justify-content-center align-items-center" style="height: 50vh;">
-  <div class="card shadow" style='width: 50%;'>
-    <div class="card-header d-flex justify-content-between align-items-center">
+<header class="text-center py-5 bg-primary text-white shadow">
+  <h1 class="display-5 fw-bold">Create Shrink</h1> 
+  <p class="lead">The ultimate tool to shorten and manage your URLs with ease.</p>
+</header>
+
+<div class="d-flex justify-content-center align-items-center" style="min-height: 60vh; background: rgba(248, 249, 250, 0.80);">
+  <div class="card shadow-lg rounded w-100" style="max-width: 600px;">
+    <div class="card-header d-flex justify-content-between align-items-center bg-dark text-white">
       <h4 class="mb-0">New: Shrink</h4>
     </div>
-    <div class="card-body pt-5 text-center">
+    <div class="card-body py-4">
+      
       <%= render "form", link: @link %>
-      <br>
+      
     </div>
   </div>
 </div>

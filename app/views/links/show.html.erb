@@ -1,18 +1,22 @@
-<p style="color: green"><%= notice %></p>
-<div class="d-flex justify-content-center align-items-center" style="height: 50vh;">
-  <div class="card shadow" style='width: 50%;'>
-    <div class="card-header d-flex justify-content-between align-items-center">
-      <h4 class="mb-0">URL Name</h4>
+<header class="text-center py-3 bg-primary text-white shadow">
+  <h1 class="display-5 fw-bold mb-2">Shrinked Link</h1> <!-- Reduced padding -->
+  <p class="lead mb-0">The ultimate tool to shorten and manage your URLs with ease.</p>
+</header>
+
+<div class="d-flex justify-content-center align-items-center" style="min-height: 50vh; background: rgba(248, 249, 250, 0.95); margin-top: -1px;">
+  <div class="card shadow-lg rounded w-100" style="max-width: 600px;">
+    <div class="card-header d-flex justify-content-between align-items-center bg-dark text-white">
+      <h4 class="mb-0">URL</h4>
       <%= button_to "Destroy this link", @link, method: :delete, class: 'btn btn-sm btn-outline-danger' %>
     </div>
-    <div class="card-body pt-5 text-center">
-      <p><b>Given URL: &nbsp;</b><%= @link.input_url %></p>
-      <p><b>Shrinked URL: &nbsp;</b><%= link_to short_url(shrinked_url: @link.shrinked_url), short_url(shrinked_url: @link.shrinked_url) %></p>
-      <p><b>Created at: &nbsp;</b><%= @link.created_at.strftime('%d-%m-%Y %H:%M:%S') %></p>
-      <br>
-      <div class=' mt-4 mb-2 d-flex justify-content-evenly'>
-        <%= link_to "Edit this link", edit_link_path(@link), class: 'btn btn-sm btn-outline-primary action-btn' %>
-        <%= link_to "Back to links", links_path, class: 'btn btn-sm btn-outline-primary action-btn' %>
+    <div class="card-body py-3 text-center"> <!-- Reduced padding -->
+      <p class="text-wrap mb-2"><b>Given URL:&nbsp;</b><%= @link.input_url %></p>
+      <p class="text-wrap mb-2"><b>Shrinked URL:&nbsp;</b><%= link_to short_url(shrinked_url: @link.shrinked_url), short_url(shrinked_url: @link.shrinked_url) %></p>
+      <p class="mb-4"><b>Created at:&nbsp;</b><%= @link.created_at.strftime('%d-%m-%Y %H:%M:%S') %></p>
+      
+      <div class="d-flex flex-column flex-md-row justify-content-evenly gap-2">
+        <%= link_to "Edit this link", edit_link_path(@link), class: 'btn btn-sm btn-outline-primary' %>
+        <%= link_to "Back to links", links_path, class: 'btn btn-sm btn-outline-secondary' %>
       </div>
     </div>
   </div>

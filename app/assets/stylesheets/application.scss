@@ -12,7 +12,23 @@
  * It is generally better to create a new file per style scope.
  *
  */
- 
- .action-btn{
-    width: 15%;
- }
+
+
+
+.action-btn{
+   width: 15%;
+}
+
+.set-card{
+   opacity: 98%;
+   margin-top: 20px;
+   
+}
+
+.upper-band{
+   height: 50vh; 
+   margin-top: 20px; 
+   width: 100%;
+   background-color: rgb(255, 242, 223);
+   opacity: 80%;
+}
